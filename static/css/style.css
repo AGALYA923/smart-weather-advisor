@@ -24,7 +24,7 @@ body.dark-mode {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 600px;
   margin: 60px auto;
   background: var(--card-light);
   padding: 50px;
