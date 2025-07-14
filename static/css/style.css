@@ -1,0 +1,168 @@
+:root {
+  --bg-light: #f0f4f8;
+  --bg-dark: #1f1f2e;
+  --card-light: #ffffff;
+  --card-dark: #2d2d3a;
+  --text-light: #222;
+  --text-dark: #f1f1f1;
+  --primary: #00796b;
+  --accent: #4caf50;
+  --transition: 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: background var(--transition), color var(--transition);
+}
+
+body.dark-mode {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  background: var(--card-light);
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  transition: background var(--transition);
+  position: relative;
+}
+
+body.dark-mode .container {
+  background: var(--card-dark);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 34px;
+  color: var(--primary);
+}
+
+input, select {
+  width: 100%;
+  padding: 18px;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 25px;
+  background: #fafafa;
+  transition: box-shadow var(--transition);
+}
+
+input:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 121, 107, 0.5);
+  border-color: var(--primary);
+}
+
+button {
+  width: 100%;
+  padding: 18px;
+  font-size: 25px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background var(--transition);
+}
+
+button:hover {
+  background-color: #004d40;
+}
+
+.result {
+  background-color: #e3fce3;
+  padding: 25px;
+  border-left: 6px solid var(--accent);
+  border-radius: 12px;
+  margin-top: 35px;
+  transition: background var(--transition);
+  font-size: 25px;
+}
+
+body.dark-mode .result {
+  background-color: #2f3e2f;
+  border-left-color: var(--accent);
+}
+
+.tip-box {
+  background: #e3f2fd;
+  padding: 20px;
+  border-left: 5px solid #2196f3;
+  border-radius: 8px;
+  margin-top: 35px;
+  font-style: italic;
+  font-size: 25px;
+}
+
+body.dark-mode .tip-box {
+  background: #263b50;
+}
+
+#weatherIcon {
+  width: 65px;
+  height: 65px;
+  margin-top: 10px;
+}
+
+.label1{
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.theme-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  font-size: 25px;
+  color: var(--primary);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-btn:hover {
+  transform: scale(1.1) rotate(15deg);
+}
+
+body.dark-mode .theme-btn {
+  color: var(--accent);
+}
+
+/* 📱 Responsive */
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  input, select, button {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .result, .tip-box {
+    font-size: 16px;
+  }
+
+  #weatherIcon {
+    width: 50px;
+    height: 50px;
+  }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Weather</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  
+  <div class="container">
+    <button class="theme-btn" onclick="toggleTheme()">🌗</button>
+
+    <h1>🌤️ Smart Weather Advisor</h1>
+
+    <label for="cityInput" class="label1">City Name</label>
+    <input type="text" id="cityInput" placeholder="Enter city...">
+
+    <label for="countryInput" class="label1">Country</label>
+    <select id="countryInput">
+      <option value="">🌍 Select</option>
+      <option value="IN">🇮🇳 India</option>
+      <option value="US">🇺🇸 USA</option>
+      <option value="GB">🇬🇧 UK</option>
+      <option value="AU">🇦🇺 Australia</option>
+    </select>
+
+    <button onclick="fetchWeather()">Get Weather</button>
+
+    <div id="weatherResult" class="result" style="display:none;">
+      <h2 id="resultCity"></h2>
+      <img id="weatherIcon" src="" alt="" />
+      <p><strong>🌡️ Temperature:</strong> <span id="temp"></span>°C</p>
+      <p><strong>💧 Humidity:</strong> <span id="humidity"></span>%</p>
+      <p><strong>💨 Wind:</strong> <span id="wind"></span> km/h</p>
+      <p><strong>🌡️ Feels Like:</strong> <span id="feels"></span>°C</p>
+      <p><strong>📈 Pressure:</strong> <span id="pressure"></span> hPa</p>
+      <p><strong>📅 Date:</strong> <span id="todayDate"></span></p>
+      <p><strong>🕒 Local Time:</strong> <span id="localTime"></span></p>
+      <p><strong>📍 Map:</strong> <a id="mapLink" href="#" target="_blank">Open in Google Maps</a></p>
+      <p><strong>🧠 Advice:</strong> <span id="suggestionText"></span></p>
+      <button onclick="speakWeather()">🔊 Speak</button>
+    </div>
+
+    <div class="tip-box">💡 <span id="tip">Tip of the Day</span></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
